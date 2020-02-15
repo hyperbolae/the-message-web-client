@@ -1,12 +1,36 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="flex-w">
+    <div class="main-container">
+      <Game />
     </div>
-    <router-view />
+    <div class="chat-container"></div>
   </div>
 </template>
 
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+import Game from "@/components/Game.vue";
+
+@Component({ components: { Game } })
+export default class extends Vue {}
+</script>
+
 <style lang="scss">
+@import "@/assets/scss/reset.scss";
+@import "@/assets/scss/container.scss";
+
+#app {
+  min-height: 100vh;
+  align-content: stretch;
+
+  .main-container {
+    flex-grow: 1;
+  }
+  .chat-container {
+    width: 25%;
+    max-width: 400px;
+    // background: lightblue;
+    box-shadow: -2px 0 2px rgba(0, 0, 0, 0.2);
+  }
+}
 </style>
