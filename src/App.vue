@@ -3,7 +3,7 @@
     <div class="main-container">
       <Game />
     </div>
-    <div class="chat-container"></div>
+    <!-- <div class="chat-container"></div> -->
   </div>
 </template>
 
