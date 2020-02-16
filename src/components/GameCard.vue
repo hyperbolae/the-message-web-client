@@ -54,17 +54,11 @@ export default class extends Vue {}
       top: 20%;
       bottom: 33%;
       background-image: url("~@/assets/images/burn.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
     }
   }
 
   .card-image {
     background-image: url("~@/assets/images/bg-fake-card.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
   }
 
   .card-info {

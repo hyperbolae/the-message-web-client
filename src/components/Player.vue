@@ -46,9 +46,6 @@ export default class extends Vue {}
     border-radius: 4px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     background-image: url("~@/assets/images/cc02.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 
     .id-container {
       font-size: 11pt;
@@ -109,7 +106,7 @@ export default class extends Vue {}
 
         .intel {
           border-radius: 2px;
-          border: lightgrey solid 1px;
+          border: white solid 1px;
           width: 20pt;
           height: 20pt;
           font-size: 12pt;

@@ -34,8 +34,8 @@
               <div class="intel-loc"></div>
             </div>
           </div>
-          <div class="ww expand">
-            <div class="game-table"></div>
+          <div class="ww expand" style="padding: 30px">
+            <div class="game-table wwhh"></div>
           </div>
         </div>
         <div class="right-seat-container seat-container flex-h">
@@ -120,20 +120,15 @@ export default class extends Vue {}
     margin: 15px;
   }
 
-  .game-table-wrapper {
-    padding: 15px;
-
-    .game-table {
-      height: 100%;
-      width: 100%;
-      border: 1px solid lightgrey;
-      border-radius: 28px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-      background-color: MintCream;
-    }
+  .game-table {
+    border: 1px solid lightgrey;
+    border-radius: 28px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    background-color: MintCream;
   }
 
   .my-view {
+    margin-top: 15px;
     margin-left: -104px;
     width: calc(100% + 104px);
     box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
