@@ -22,7 +22,12 @@
     </div>
     <div class="my-view flex-w ww">
       <Player />
-      <div class="hand-container"></div>
+      <div class="hand-container flex-w">
+        <GameCard class="game-card hand" />
+        <GameCard class="game-card hand" />
+        <GameCard class="game-card hand" />
+        <GameCard class="game-card hand" />
+      </div>
       <div class="control-panel"></div>
     </div>
   </div>
@@ -31,8 +36,9 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import Player from "@/components/Player.vue";
+import GameCard from "@/components/GameCard.vue";
 
-@Component({ components: { Player } })
+@Component({ components: { Player, GameCard } })
 export default class extends Vue {}
 </script>
 
@@ -71,6 +77,16 @@ $player-view-margin: 1rem;
 
   .my-view {
     box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
+
+    .hand-container {
+      flex-grow: 1;
+      padding: 1rem;
+      background: lightgoldenrodyellow;
+      height: 100%;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
   }
 }
 </style>
