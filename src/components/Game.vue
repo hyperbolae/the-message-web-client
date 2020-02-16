@@ -1,34 +1,63 @@
 <template>
-  <div class="game-container flex-h ww">
-    <div class="main-view flex-w ww">
-      <div class="left-seat-container seat-container flex-h">
+  <div id="game-view" class="flex-w">
+    <div class="left-seat-container seat-container flex-h">
+      <div class="player-wrapper">
         <Player class="player-view" />
-        <Player class="player-view" />
+        <div class="intel-loc"></div>
       </div>
-      <div class="mid-container flex-h">
-        <div class="top-seat-container seat-container flex-w ww">
-          <Player class="player-view" />
-          <Player class="player-view" />
-          <Player class="player-view" />
-          <Player class="player-view" />
-        </div>
-        <div class="game-table ww"></div>
-        <div class="decision-button-container ww"></div>
-      </div>
-      <div class="right-seat-container seat-container flex-h">
+      <div class="player-wrapper">
         <Player class="player-view" />
+        <div class="intel-loc"></div>
+      </div>
+      <div class="player-wrapper me">
         <Player class="player-view" />
       </div>
     </div>
-    <div class="my-view flex-w ww">
-      <Player />
-      <div class="hand-container flex-w">
-        <GameCard class="game-card hand" />
-        <GameCard class="game-card hand" />
-        <GameCard class="game-card hand" />
-        <GameCard class="game-card hand" />
+    <div class="flex-h expand">
+      <div class="flex-w ww expand">
+        <div class="flex-h expand">
+          <div class="top-seat-container seat-container flex-w ww">
+            <div class="player-wrapper">
+              <Player class="player-view" />
+              <div class="intel-loc"></div>
+            </div>
+            <div class="player-wrapper">
+              <Player class="player-view" />
+              <div class="intel-loc"></div>
+            </div>
+            <div class="player-wrapper">
+              <Player class="player-view" />
+              <div class="intel-loc"></div>
+            </div>
+            <div class="player-wrapper">
+              <Player class="player-view" />
+              <div class="intel-loc"></div>
+            </div>
+          </div>
+          <div class="ww expand">
+            <div class="game-table"></div>
+          </div>
+        </div>
+        <div class="right-seat-container seat-container flex-h">
+          <div class="player-wrapper">
+            <Player class="player-view" />
+            <div class="intel-loc"></div>
+          </div>
+          <div class="player-wrapper">
+            <Player class="player-view" />
+            <div class="intel-loc"></div>
+          </div>
+        </div>
       </div>
-      <div class="control-panel"></div>
+      <div class="my-view flex-w ww">
+        <div class="hand-container flex-w">
+          <GameCard class="game-card hand" />
+          <GameCard class="game-card hand" />
+          <GameCard class="game-card hand" />
+          <GameCard class="game-card hand" />
+        </div>
+        <div class="control-panel"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -42,40 +71,71 @@ import GameCard from "@/components/GameCard.vue";
 export default class extends Vue {}
 </script>
 
-<style lang="scss" scoped>
-$player-view-margin: 1rem;
+<style lang="scss">
+#game-view {
+  $player-view-space: 1rem;
 
-.game-container {
-  height: 100%;
-
-  .main-view {
-    flex-grow: 1;
-
-    .mid-container {
-      flex-grow: 1;
-
-      .top-seat-container {
-        justify-content: center;
-        .player-view:not(:first-child) {
-          margin-left: $player-view-margin;
-        }
-      }
-
-      .game-table {
-        flex-grow: 1;
-      }
-    }
-
-    .left-seat-container,
-    .right-seat-container {
-      justify-content: flex-end;
-      .player-view {
-        margin-bottom: $player-view-margin;
+  .top-seat-container {
+    justify-content: center;
+    .player-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:not(:first-child) {
+        margin-left: $player-view-space;
       }
     }
   }
 
+  .left-seat-container {
+    justify-content: flex-end;
+    .player-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: $player-view-space;
+      &.me {
+        margin-bottom: 0;
+        .time-bar {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .right-seat-container {
+    justify-content: flex-end;
+    .player-wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      margin-bottom: $player-view-space;
+    }
+  }
+
+  .intel-loc {
+    border: 1px solid lightgrey;
+    width: 75px;
+    height: 100px;
+    margin: 15px;
+  }
+
+  .game-table-wrapper {
+    padding: 15px;
+
+    .game-table {
+      height: 100%;
+      width: 100%;
+      border: 1px solid lightgrey;
+      border-radius: 28px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+      background-color: MintCream;
+    }
+  }
+
   .my-view {
+    margin-left: -104px;
+    width: calc(100% + 104px);
     box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
 
     .hand-container {

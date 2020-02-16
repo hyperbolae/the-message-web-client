@@ -9,7 +9,7 @@
         <span class="intel-type">Express</span>
       </div>
       <div class="empty-wrapper"></div>
-      <div class="func-name-wrapper extend flex-cc">
+      <div class="func-name-wrapper flex-cc">
         <p class="func-name flex-w">
           <span class="func-title">試探</span>
           <span class="func-subtitle">-1</span>
@@ -65,12 +65,10 @@ export default class extends Vue {}
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    z-index: 1;
   }
 
   .card-info {
     margin: 4px 6px;
-    z-index: 2;
     .intel-type-wrapper {
       justify-content: flex-end;
       align-items: center;

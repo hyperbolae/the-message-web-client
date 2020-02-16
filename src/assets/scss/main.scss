@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .flex-w {
     display: flex;
     flex-direction: row;
@@ -18,6 +22,15 @@
     width: 100%;
 }
 
-* {
-    box-sizing: border-box;
+.hh {
+    height: 100%;
+}
+
+.wwhh {
+    width: 100%;
+    height: 100%;
+}
+
+.expand {
+    flex-grow: 1;
 }

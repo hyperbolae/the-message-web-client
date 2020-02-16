@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="flex-w">
     <div class="main-container">
-      <Game />
+      <Game class="wwhh" />
     </div>
     <!-- <div class="chat-container"></div> -->
   </div>
@@ -17,7 +17,7 @@ export default class extends Vue {}
 
 <style lang="scss">
 @import "@/assets/scss/reset.scss";
-@import "@/assets/scss/container.scss";
+@import "@/assets/scss/main.scss";
 
 #app {
   min-height: 100vh;

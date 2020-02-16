@@ -1,7 +1,7 @@
 <template>
-  <div class="player-view flex-h extend">
-    <div class="main-wrapper flex-h extend">
-      <p class="id-container extend">
+  <div class="player-view flex-h">
+    <div class="main-wrapper flex-h">
+      <p class="id-container">
         <span class="seat">Player 1</span>
         <span class="player-id">雙曲線</span>
       </p>
@@ -40,8 +40,8 @@ export default class extends Vue {}
 .player-view {
   .main-wrapper {
     position: relative;
-    width: 21.85vh;
-    height: 23vh;
+    width: 220px;
+    height: 240px;
     border: 1px solid lightgrey;
     border-radius: 4px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
@@ -73,7 +73,7 @@ export default class extends Vue {}
         align-items: flex-start;
         justify-content: space-between;
         .cc-name {
-          font-size: 2.85vh;
+          font-size: 24pt;
           writing-mode: vertical-rl;
           font-family: "Noto Serif TC", Serif;
           font-weight: 900;
